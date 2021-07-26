@@ -4,9 +4,152 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario donaciones</title>
+    <link rel="stylesheet" href="form-donaciones.css">
+    <title>Document</title>
 </head>
 <body>
-    <h1>ACA IRIA EL FORM DE DONACIONES PERRI</h1>
+    <main>
+        <div class="form-container-fondo">
+            <form class="container-datos-personales">
+                <h2>Datos Personales</h2>
+                    <div class="nombre">
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    <div class="apellido">    
+                        <div>
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido" placeholder="Apellido" required>
+                        </div>
+                    </div>
+                    <div class="fecha-de-nacimiento">    
+                        <div>
+                            <label for="fecha-de-nacimiento">Fecha de nacimiento</label>
+                            <input type="date" name="fecha-de-nacimiento" value="aaaa-mm-dd" required>
+                        </div>
+                    </div>
+                    <div class="email">    
+                        <div>
+                            <label for="email">email</label>
+                            <input type="email" name="email" placeholder="ejemplo@email.com" required>
+                        </div>
+                    </div>
+                    <div class="documento">    
+                        <div>
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" name="codigo-area" placeholder="cod area" required>
+                            <input type="text" name="telefono" placeholder="teléfono" required>                        
+                        </div>
+                    </div>
+                    <div class="documento">    
+                        <div>
+                            <label for="documento">Documento</label>
+                            <input type="text" name="documento" placeholder="Documento de indentidad" required>
+                        </div>
+                    </div>
+                    <div class="btn-dni-desplegable">
+                            <label>Tipo de documento</label>
+                         <div class="select">
+                            <select>
+                            <option value="" disabled selected hidden>Tipo de docuento</option>
+                            <option value="Option 1">DNI</option>
+                            <option value="Option 2">CI</option>
+                            <option value="Option 3">LE</option>
+                            <option value="Option 4">LC</option>
+                            <option value="Option 4">Documento no argentino</option>
+                            </select>        
+                        </div>
+                    </div> 
+            </form>
+            <div class="container-datos-facturacion">
+                 <h2>Medio de pago</h2>
+                     <div class="btn-tarjetas-desplegable">
+                        <label>Tarjeta de Credito *</label>
+                        <div class="select">
+                        <select>
+                            <option value="" disabled selected hidden>Tarjeta</option>
+                            <option value="Option 1">Visa</option>
+                            <option value="Option 1">Visa debito</option>
+                            <option value="Option 2">Master Card</option>
+                            <option value="Option 3">American Express</option>
+                            <option value="Option 4">Diners Club</option>
+                            <option value="Option 5">Nets</option>
+                            <option value="Option 6">JCB</option>
+                            <option value="Option 7">Otra</option>
+                        </select>
+                        </div>
+                        <div class="btn radio">
+                            <label><input type="radio" name="Autorizacion"> Crédito</label>
+                            <label><input type="radio" name="Autorizacion"> Débito</label>
+                        </div>
+                     <div class="numeros-tarjeta">
+                        <label for="numero">Número de tarjeta</label>
+                        <input type=text name=numero onkeyUp="return ValNumero(this);" maxlength="4" size="4" />
+                        <input type=text name=numero onkeyUp="return ValNumero(this);" maxlength="4" size="4" />
+                        <input type=text name=numero onkeyUp="return ValNumero(this);" maxlength="4" size="4" />
+                        <input type=text name=numero onkeyUp="return ValNumero(this);" maxlength="4" size="4" />
+                    </div>
+                    <div class="btn-fecha-tarjeta">
+                        <label for="Option 1">Fecha de expiración</label>
+                        <div class="select">
+                                <select>
+                                    <option value="Option 1" disabled selected hidden>Mes</option>
+                                    <option value="Option 2">Enero</option>
+                                    <option value="Option 3">Febrero</option>
+                                    <option value="Option 4">Marzon</option>
+                                    <option value="Option 5">Abril</option>
+                                    <option value="Option 6">Mayo</option>
+                                    <option value="Option 7">Junio</option>
+                                    <option value="Option 8">Julio</option>
+                                    <option value="Option 9">Agosto</option>
+                                    <option value="Option 10">Septiembre</option>
+                                    <option value="Option 11">Octubre</option>
+                                    <option value="Option 12">Noviembre</option>
+                                    <option value="Option 13">Diciembre</option>
+                                </select>
+                        </div>    
+                    </div>
+                        <div class="select">   
+                                <select>
+                                    <option value="" disabled selected hidden>Año</option>
+                                    <option value="Option 1">2021</option>
+                                    <option value="Option 2">2022</option>
+                                    <option value="Option 3">2023</option>
+                                    <option value="Option 3">2024</option>
+                                    <option value="Option 4">2025</option>
+                                    <option value="Option 4">2026</option>
+                                    <option value="Option 4">2027</option>
+                                </select>    
+                        </div>  
+                        <div class="Nombre-tarjeta">
+                            <label for="nombre">Nombre del usuario de la tarjeta</label>
+                            <input type="text" name="nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="btn radio">
+                            <label><input type="radio" name="Autorizacion">Autorizo a debitar la donación de mi tarjeta </label>
+                        </div>
+            </div>
+        </div>
+    </main>
+    <aside class="barra-lateral">
+        <p>Dejá tus datos con confianza. Toda la información es transmitida de manera segura y encriptada, solo nosotros podremos acceder a ella. Las donaciones a <strong>unIT</strong> son deducibles del Impuesto a las Ganancias según el Art. 81 de la Ley N° 20.628 (valido en ARG)</p>
+    </aside>
+
+   <script> function Solo_Numerico(variable){
+        Numer=parseInt(variable);
+        if (isNaN(Numer)){
+            return "";
+        }
+        return Numer;
+    }
+    function ValNumero(Control){
+        Control.value=Solo_Numerico(Control.value);
+    }
+    </script>
 </body>
 </html>
+
+
+

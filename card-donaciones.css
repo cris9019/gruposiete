@@ -23,12 +23,13 @@
   --blizzard-blue: #ade8f4ff;
   --powder-blue: #caf0f8ff;
   }
-  
+  /*Agregar el animation a todo el html, y la @keyframe slideUp */
   .cards-container {
     display: flex;
     width: 90%;
     justify-content: space-around;
     flex-wrap: wrap;
+    animation: slideUp 2000ms ease;
   }
   
   .card {
@@ -96,13 +97,13 @@
   }
   .card .info h1 {
     margin-top: 1rem;
-    color:var(--powder-blue)
+    color:#fff;
   }
   .card .info p {
     letter-spacing: 1px;
     font-size: 1rem;
     font-weight: bold;
-    color:var(--powder-blue);
+    color:#fff;
   }
   .card .info button {
     margin-top: 0.6rem;
@@ -125,4 +126,16 @@
   }
   .card .info button i{
     margin-right: 1rem;
+  }
+/*aca esta la keyframe de la animation de para toda la pagina*/
+  @keyframes slideUp {
+    0% {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
   }
